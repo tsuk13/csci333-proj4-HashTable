@@ -14,6 +14,7 @@ class HashTable {
 
   public:
     HashTable<T>();
+    ~HashTable<T>();
     void insert(string k, T v);
     void remove(string k);
     T find(string k);
