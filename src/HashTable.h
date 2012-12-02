@@ -11,6 +11,7 @@ template <typename T>
 class HashTable {
   private:
     vector<T>* table;
+    int hashFunc(string s);
 
   public:
     HashTable<T>();
