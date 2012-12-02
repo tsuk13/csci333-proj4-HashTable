@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include "HashTable.h"
+#include "Entry.h"
 
 #define TABLESIZE 257
 
@@ -19,7 +20,7 @@ int HashTable<T>::hashFunc(string s){
 
 template <typename T>
 HashTable<T>::HashTable(){
-  table = new vector<T>[ TABLESIZE ]; 
+  table = new vector< Entry<T> >[ TABLESIZE ]; 
 }
 
 template <typename T>

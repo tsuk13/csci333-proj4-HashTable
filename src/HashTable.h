@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include "Entry.h"
 
 using std::vector;
 using std::string;
@@ -10,7 +11,7 @@ using std::string;
 template <typename T>
 class HashTable {
   private:
-    vector<T>* table;
+    vector<Entry <T> >* table;
     int hashFunc(string s);
 
   public:
