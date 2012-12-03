@@ -27,6 +27,18 @@ HashTable<T>::~HashTable<T>(){
   delete[] table;
 }
 
+template <typename T>
+void HashTable<T>::insert(string k, T v){
+  vector<Entry <T> >* l = &(table[hashFunc(k)]);
+  for(int i = 0; i < (int) l->size(); i++){
+    if(l->at(i).getKey().compare(k) == 0){
+      l->at(i).setValue(v);
+      return;
+    }
+  }
+  l->push_back(Entry<T>(k, v));
+}
+
 
 template class HashTable<int>;
 template class HashTable<double>;
