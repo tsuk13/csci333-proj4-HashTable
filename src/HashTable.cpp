@@ -3,8 +3,6 @@
 #include "HashTable.h"
 #include "Entry.h"
 
-#define TABLESIZE 257
-
 using std::vector;
 using std::string;
 
@@ -14,13 +12,14 @@ int HashTable<T>::hashFunc(string s){
   for(int i = 0; i < (int) s.size(); i++){
     sum += (int) s[i];
   }
-  sum = sum % TABLESIZE ;
+  sum = sum % size ;
   return sum;
 }
 
 template <typename T>
-HashTable<T>::HashTable(){
-  table = new vector< Entry<T> >[ TABLESIZE ]; 
+HashTable<T>::HashTable(int s){
+  size = s;
+  table = new vector< Entry<T> >[size]; 
 }
 
 template <typename T>

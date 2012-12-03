@@ -13,9 +13,10 @@ class HashTable {
   private:
     vector<Entry <T> >* table;
     int hashFunc(string s);
+    int size;
 
   public:
-    HashTable<T>();
+    HashTable<T>( int s = 257);
     ~HashTable<T>();
     void insert(string k, T v);
     void remove(string k);
