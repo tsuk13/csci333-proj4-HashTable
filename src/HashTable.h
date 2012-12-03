@@ -17,7 +17,7 @@ class HashTable {
     T def;
 
   public:
-    HashTable<T>( T d, int s = 257);
+    HashTable<T>( T d, int s = 257); //provide a default value d to be returned if not contained
     ~HashTable<T>();
     void insert(string k, T v);
     void remove(string k);

@@ -41,6 +41,17 @@ void HashTable<T>::insert(string k, T v){
 }
 
 template <typename T>
+void HashTable<T>::remove(string k){
+  vector<Entry <T> >* l = &(table[hashFunc(k)]);
+  for(int i = 0; i < (int) l->size(); i++){
+    if(l->at(i).getKey().compare(k) == 0){
+      l->erase(l->begin() + i);
+      return;
+    }
+  }
+}
+
+template <typename T>
 T HashTable<T>::find(string k){
   vector<Entry <T> >* l = &(table[hashFunc(k)]);
   for(int i = 0; i < (int) l->size(); i++){

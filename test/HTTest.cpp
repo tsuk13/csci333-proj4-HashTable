@@ -12,5 +12,7 @@ int main(){
   HT->insert("taco", 5);
   cout << HT->find("taco") << "\n";
   cout << HT->find("banana") << "\n";
+  HT->remove("banana");
+  cout << HT->find("banana") << "\n";
   delete HT;
 }
