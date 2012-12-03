@@ -14,13 +14,14 @@ class HashTable {
     vector<Entry <T> >* table;
     int hashFunc(string s);
     int size;
+    T def;
 
   public:
-    HashTable<T>( int s = 257);
+    HashTable<T>( T d, int s = 257);
     ~HashTable<T>();
     void insert(string k, T v);
     void remove(string k);
-    T* find(string k);
+    T find(string k);
 };
 
 #endif

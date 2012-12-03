@@ -17,8 +17,9 @@ int HashTable<T>::hashFunc(string s){
 }
 
 template <typename T>
-HashTable<T>::HashTable(int s){
+HashTable<T>::HashTable(T d, int s){
   size = s;
+  def = d;
   table = new vector< Entry<T> >[size]; 
 }
 
@@ -37,6 +38,17 @@ void HashTable<T>::insert(string k, T v){
     }
   }
   l->push_back(Entry<T>(k, v));
+}
+
+template <typename T>
+T HashTable<T>::find(string k){
+  vector<Entry <T> >* l = &(table[hashFunc(k)]);
+  for(int i = 0; i < (int) l->size(); i++){
+    if(l->at(i).getKey().compare(k) == 0){
+      return l->at(i).getValue();
+    }
+  }
+  return def;
 }
 
 
